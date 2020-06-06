@@ -23,12 +23,12 @@ p:last-child {
   margin-bottom: 0;
 }
 p,
-.tmpl-post li,
+.tmpl-page li,
 img {
   max-width: 37.5em; /* 600px /16 */
 }
 p,
-.tmpl-post li {
+.tmpl-page li {
   line-height: 1.45;
 }
 a[href] {
@@ -89,37 +89,37 @@ table th {
   text-decoration: underline;
 }
 
-/* Posts list */
-.postlist {
+/* Resumes list */
+.resumelist {
   list-style: none;
   padding: 0;
 }
-.postlist-item {
+.resumelist-item {
   counter-increment: start-from -1;
 }
-.postlist-item:before {
+.resumelist-item:before {
   display: inline-block;
   pointer-events: none;
   content: "" counter(start-from, decimal-leading-zero) ". ";
   line-height: 100%;
   text-align: right;
 }
-.postlist-date,
-.postlist-item:before {
+.resumelist-date,
+.resumelist-item:before {
   font-size: 0.8125em; /* 13px /16 */
   color: var(--darkgray);
 }
-.postlist-date {
+.resumelist-date {
   word-spacing: -0.5px;
 }
-.postlist-link {
+.resumelist-link {
   display: inline-block;
   padding: 0.25em 0.1875em; /* 4px 3px /16 */
 }
-.postlist-item-active .postlist-link {
+.resumelist-item-active .resumelist-link {
   font-weight: bold;
 }
-.tmpl-home .postlist-link {
+.tmpl-home .resumelist-link {
   font-size: 1.1875em; /* 19px /16 */
   font-weight: 700;
 }

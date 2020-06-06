@@ -1,0 +1,14 @@
+<ol reversed class="resumelist" style="counter-reset: start-from {{ (resumeslistCounter or resumeslist.length) + 1 }}">
+{% for resume in resumeslist | reverse %}
+  <li class="resumelist-item{% if resume.url == url %} resumelist-item-active{% endif %}">
+    <a href="{{ resume.url | url }}" class="resumelist-link">{% if resume.data.title %}{{ resume.data.title }}{% else %}<code>{{ resume.url }}</code>{% endif %}</a>
+    <time class="resumelist-date" datetime="{{ resume.date | htmlDateString }}">{{ resume.date | readableDate }}</time>
+    {% for tag in resume.data.tags %}
+      {%- if collections.tagList.indexOf(tag) != -1 -%}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+      {%- endif -%}
+    {% endfor %}
+  </li>
+{% endfor %}
+</ol>

@@ -5,10 +5,10 @@ eleventyNavigation:
   order: 1
 ---
 
-<h1>Latest 3 Posts</h1>
+<h1>Latest Resumes</h1>
 
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
+{% set resumeslist = collections.resumes | head(-3) %}
+{% set resumeslistCounter = collections.resumes | length %}
+{% include "resumeslist.njk" %}
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+<p>More resumes can be found in <a href="{{ '/resumes/' | url }}">the archive</a>.</p>
