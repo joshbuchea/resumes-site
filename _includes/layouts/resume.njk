@@ -11,4 +11,14 @@ templateClass: tmpl-resume
 - Work Experience
 - References Upon Request
 
+<h2>Skills</h2>
+
+<ul>
+{% for skill in skills %}
+  <li class="skilllist-item">
+    {{ skill }}
+  </li>
+{% endfor %}
+</ul>
+
 {{ content | safe }}
