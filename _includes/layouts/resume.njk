@@ -3,13 +3,31 @@ layout: page
 templateClass: tmpl-resume
 ---
 
-<h2>In the Template</h2>
+<h2>To Do</h2>
 
-- Name
-- Location
-- Skills
-- Work Experience
-- References Upon Request
+<ul>
+  <li>[x] Name</li>
+  <li>[x] Location</li>
+  <li>[x] Social</li>
+  <li>[x] Skills</li>
+  <li>[ ] Experience</li>
+  <li>[ ] Education</li>
+  <li>[ ] References (Upon Request)</li>
+</ul>
+
+<h1>{{name}}</h1>
+
+<div>{{email}}</div>
+<div>{{phone}}</div>
+<div>{{location}}</div>
+
+<ul>
+{% for profile in social %}
+  <li>
+    {{ profile }}
+  </li>
+{% endfor %}
+</ul>
 
 <h2>Skills</h2>
 
@@ -21,4 +39,8 @@ templateClass: tmpl-resume
 {% endfor %}
 </ul>
 
-{{ content | safe }}
+<h2>Experience</h2>
+
+<h2>Education</h2>
+
+{# {{ content | safe }} #}
