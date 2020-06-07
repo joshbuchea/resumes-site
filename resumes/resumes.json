@@ -1,6 +1,0 @@
-{
-  "permalink": "/{{ page.fileSlug | slug }}/",
-  "tags": [
-    "resumes"
-  ]
-}

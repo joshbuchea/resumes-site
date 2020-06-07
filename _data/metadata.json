@@ -1,13 +1,7 @@
 {
-  "title": "Resumes",
+  "title": "Semantic Resume",
   "url": "https://myurl.com/",
-  "description": "Simple resumes for all",
-  "feed": {
-    "subtitle": "Simple resumes for all",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://myurl.com/"
-  },
+  "description": "A fast, accessible, semantic resume",
   "author": {
     "name": "Josh Buchea",
     "email": "hi@joshbuchea.com"
