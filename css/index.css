@@ -15,7 +15,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: system-ui, sans-serif;
+  /* font-family: system-ui, sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 18px;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -58,6 +60,44 @@ table td,
 table th {
   padding-right: 1em;
 }
+
+time {
+  color: gray;
+}
+
+header, section {
+  margin: auto;
+  max-width: 600px;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+/* https://webaim.org/techniques/css/invisiblecontent/ */
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+/* .skills ul {
+  list-style: none;
+  padding-left: 0;
+}
+.skills ul li {
+  display: inline-block;
+}
+.skills ul li:after {
+  content: ', '
+} */
 
 /* Header */
 .home {

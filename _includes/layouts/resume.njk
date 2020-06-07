@@ -1,46 +1,139 @@
 ---
-layout: page
+layout: base
 templateClass: tmpl-resume
 ---
 
-<h2>To Do</h2>
+<header>
+  <h1>{{ name }}</h1>
+  <h3>{{ title }}</h3>
+</header>
 
-<ul>
-  <li>[x] Name</li>
-  <li>[x] Location</li>
-  <li>[x] Social</li>
-  <li>[x] Skills</li>
-  <li>[ ] Experience</li>
-  <li>[ ] Education</li>
-  <li>[ ] References (Upon Request)</li>
-</ul>
+<main>
+  <section>
+    <h2 class="hidden">Details</h2>
 
-<h1>{{name}}</h1>
+    {% if location %}<address>{{ location }}</address>{% endif %}
 
-<div>{{email}}</div>
-<div>{{phone}}</div>
-<div>{{location}}</div>
+    {% if website %}
+    <div><a href="{{ website }}">{{ website }}</a></div>
+    {% endif %}
 
-<ul>
-{% for profile in social %}
-  <li>
+    {% if phone %}<div>{{ phone }}</div>{% endif %}
+    {% if email %}
+    <div><a href="mailto:{{ email }}">{{ email }}</a></div>
+    {% endif %}
+
+    {# social #}
+    {% if social.twitter %}
+    <div>
+      <a href="https://twitter.com/{{ social.twitter }}">
+        twitter.com/{{ social.twitter }}
+      </a>
+    </div>
+    {% endif %}
+    {% if social.github %}
+    <div>
+      <a href="https://github.com/{{ social.github }}">
+        github.com/{{ social.github }}
+      </a>
+    </div>
+    {% endif %}
+    {% if social.linkedin %}
+    <div>
+      <a href="https://www.linkedin.com/in/{{ social.linkedin }}/">
+        linkedin.com/in/{{ social.linkedin }}
+      </a>
+    </div>
+    {% endif %}
+  </section>
+
+  {% if profile %}
+  <section>
+    <h2>Profile</h2>
+
     {{ profile }}
-  </li>
-{% endfor %}
-</ul>
+  </section>
+  {% endif %}
 
-<h2>Skills</h2>
+  <section class="skills">
+    <h2>Skills</h2>
 
-<ul>
-{% for skill in skills %}
-  <li class="skilllist-item">
-    {{ skill }}
-  </li>
-{% endfor %}
-</ul>
+    <ul>
+    {% for skill in skills %}
+      <li>
+        {{ skill }}
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
 
-<h2>Experience</h2>
+  <section>
+    <h2>Experience</h2>
 
-<h2>Education</h2>
+    {% for _experience in experience %}
+    <div>
+      <div>
+        <strong>{{ _experience.title }} at {{ _experience.company }}</strong>
+      </div>
+      <div>
+        <time>
+          {{ _experience.start_date }}
+          {% if _experience.start_date and _experience.end_date %}–{% endif %}
+          {{ _experience.end_date }}
+        </time>
+      </div>
+
+      {% if _experience.achievements %}
+      <ul>
+      {% for achievement in _experience.achievements %}
+        <li>
+          {{ achievement }}
+        </li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    {% for _education in education %}
+    <div>
+      <div>
+        <strong>{{ _education.degree }}, {{ _education.school }}</strong>
+      </div>
+      <div>
+        <time>
+          {{ _education.start_date }}
+          {% if _education.start_date and _education.end_date %}–{% endif %}
+          {{ _education.end_date }}
+        </time>
+      </div>
+
+      {% if _education.achievements %}
+      <ul>
+      {% for achievement in _education.achievements %}
+        <li>
+          {{ achievement }}
+        </li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  {# testimonials #}
+
+  {% if references %}
+  <section>
+    <h2>References</h2>
+
+    {{ references }}
+  </section>
+  {% endif %}
+</main>
 
 {# {{ content | safe }} #}
