@@ -12,8 +12,8 @@ jobs:
           args: --output _dist
           install_dependencies: true
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v1.1.0
+        uses: peaceiris/actions-gh-pages@v3.6.1
         env:
           PUBLISH_DIR: _site 
           PUBLISH_BRANCH: gh-pages
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
