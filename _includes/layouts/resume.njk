@@ -14,13 +14,13 @@ templateClass: tmpl-resume
 
     {% if location %}<address>{{ location }}</address>{% endif %}
 
-    {% if website %}
-    <div><a href="{{ website }}">{{ website }}</a></div>
-    {% endif %}
-
     {% if phone %}<div>{{ phone }}</div>{% endif %}
     {% if email %}
     <div><a href="mailto:{{ email }}">{{ email }}</a></div>
+    {% endif %}
+
+    {% if website %}
+    <div><a href="{{ website }}">{{ website }}</a></div>
     {% endif %}
 
     {# social #}

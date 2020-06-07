@@ -113,3 +113,9 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited {
   color: #aaa;
 }
+
+@media screen and (min-width: 500px) {
+  .skills ul {
+    columns: 2;
+  }
+}
