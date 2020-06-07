@@ -21,9 +21,6 @@ body {
   color: var(--darkgray);
   background-color: var(--white);
 }
-p:last-child {
-  margin-bottom: 0;
-}
 p,
 .tmpl-page li,
 img {
@@ -65,7 +62,7 @@ time {
   color: gray;
 }
 
-header, section {
+header, main {
   margin: auto;
   max-width: 600px;
 }
