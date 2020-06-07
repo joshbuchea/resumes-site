@@ -67,7 +67,7 @@ experience:
       - Developed, published, and maintained 5 mobile apps for Android and iOS
 education:
   - school: Portland Community College
-    degree: Computer Information Systems AAS
+    degree: Computer Information Systems
     location: Portland, OR
     start_date:
     end_date: 2014
@@ -76,7 +76,7 @@ education:
       - Measured achievement
       - Measured achievement
   - school: Portland Community College
-    degree: Website Development and Design AAS
+    degree: Website Development and Design
     location: Portland, OR
     start_date:
     end_date: 2013

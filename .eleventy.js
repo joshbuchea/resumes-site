@@ -7,7 +7,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
-  eleventyConfig.addLayoutAlias("home", "layouts/home.njk");
   eleventyConfig.addLayoutAlias("resume", "layouts/resume.njk");
 
   eleventyConfig.addFilter("readableDate", dateObj => {
