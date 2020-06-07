@@ -62,7 +62,7 @@ time {
   color: gray;
 }
 
-header, section {
+header, main {
   margin: auto;
   max-width: 600px;
 }
