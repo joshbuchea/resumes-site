@@ -7,11 +7,11 @@ templateClass: tmpl-resume
 
 <header>
   <h1 itemprop="name">{{ name }}</h1>
-  <p itemprop="jobTitle">{{ title }}</p>
+  <p>{{ headline }}</p>
 </header>
 
 <main>
-  <section>
+  <section class="section-details">
     <h2 class="hidden">Details</h2>
 
     {% if location %}
@@ -56,7 +56,7 @@ templateClass: tmpl-resume
   </section>
 
   {% if profile %}
-  <section>
+  <section class="section-profile">
     <h2>Profile</h2>
 
     <p itemprop="description">
@@ -65,7 +65,7 @@ templateClass: tmpl-resume
   </section>
   {% endif %}
 
-  <section class="skills">
+  <section class="section-skills">
     <h2>Skills</h2>
 
     <ul itemprop="knowsAbout">
@@ -75,19 +75,25 @@ templateClass: tmpl-resume
     </ul>
   </section>
 
-  <section>
+  <section class="section-experience">
     <h2>Experience</h2>
 
     {% for _experience in experience %}
-    <div itemscope itemtype="http://schema.org/Event/Job">
-      <div>
-        <strong>
-          <span itemprop="name">{{ _experience.title }}</span>
-          at
-          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="name">{{ _experience.organization }}</span>
-          </span>
-        </strong>
+
+    {% if _experience.current %}
+    <div class="job">
+      <h3 itemprop="jobTitle">{{ _experience.title }}</h3>
+      <div itemprop="location" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+    {% else %}
+    <div class="job" itemscope itemtype="http://schema.org/Event/Job">
+      <h3 itemprop="name">{{ _experience.title }}</h3>
+      <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+    {% endif %}
+
+        <div itemprop="name">{{ _experience.organization }}</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">{{ _experience.location }}</div>
+        </div>
       </div>
       <time>
         {% if _experience.start_date %}
@@ -114,7 +120,7 @@ templateClass: tmpl-resume
     {% endfor %}
   </section>
 
-  <section>
+  <section class="section-education">
     <h2>Education</h2>
 
     {% for _education in education %}
@@ -146,7 +152,7 @@ templateClass: tmpl-resume
   {# testimonials #}
 
   {% if references %}
-  <section>
+  <section class="section-references">
     <h2>References</h2>
 
     {{ references }}

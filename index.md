@@ -1,6 +1,6 @@
 ---
 name: Josh Buchea
-title: Software Engineer
+headline: Software Engineer
 location: McMinnville, OR
 website: joshbuchea.com
 email: hi@joshbuchea.com
@@ -24,6 +24,7 @@ experience:
   - title: Senior Frontend Engineer
     organization: Axios
     location: Remote
+    current: true
     start_date: 2020
     end_date: Present
     achievements:
