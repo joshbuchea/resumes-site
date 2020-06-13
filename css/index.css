@@ -21,6 +21,9 @@ body {
   color: var(--darkgray);
   background-color: var(--white);
 }
+h3 {
+  /* margin-bottom: .8em; */
+}
 p,
 .tmpl-page li,
 img {
@@ -115,7 +118,7 @@ a[href].direct-link:focus:visited,
 }
 
 @media screen and (min-width: 500px) {
-  .skills ul {
+  .section-skills ul {
     columns: 2;
   }
 }

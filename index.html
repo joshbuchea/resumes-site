@@ -7,7 +7,7 @@
     <!-- TODO: remove this tag post-launch -->
     <meta name="robots" content="noindex, nofollow">
 
-    <title>Software Engineer</title>
+    <title>Semantic Resume</title>
     <meta name="description" content="A fast, accessible, semantic resume">
     <link rel="icon" href="/resume/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/resume/css/index.css">
@@ -18,11 +18,11 @@
 
 <header>
   <h1 itemprop="name">Josh Buchea</h1>
-  <p itemprop="jobTitle">Software Engineer</p>
+  <p>Software Engineer</p>
 </header>
 
 <main>
-  <section>
+  <section class="section-details">
     <h2 class="hidden">Details</h2>
 
     
@@ -68,7 +68,7 @@
 
   
 
-  <section class="skills">
+  <section class="section-skills">
     <h2>Skills</h2>
 
     <ul itemprop="knowsAbout">
@@ -94,19 +94,21 @@
     </ul>
   </section>
 
-  <section>
+  <section class="section-experience">
     <h2>Experience</h2>
 
     
-    <div itemscope itemtype="http://schema.org/Event/Job">
-      <div>
-        <strong>
-          <span itemprop="name">Senior Frontend Engineer</span>
-          at
-          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="name">Axios</span>
-          </span>
-        </strong>
+
+    
+    <div class="job">
+      <h3 itemprop="jobTitle">Senior Frontend Engineer</h3>
+      <div itemprop="location" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+    
+
+        <div itemprop="name">Axios</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">Remote</div>
+        </div>
       </div>
       <time>
         
@@ -135,15 +137,17 @@
       
     </div>
     
-    <div itemscope itemtype="http://schema.org/Event/Job">
-      <div>
-        <strong>
-          <span itemprop="name">Software Engineer</span>
-          at
-          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="name">Echobind</span>
-          </span>
-        </strong>
+
+    
+    <div class="job" itemscope itemtype="http://schema.org/Event/Job">
+      <h3 itemprop="name">Software Engineer</h3>
+      <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+    
+
+        <div itemprop="name">Echobind</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">Remote</div>
+        </div>
       </div>
       <time>
         
@@ -170,15 +174,17 @@
       
     </div>
     
-    <div itemscope itemtype="http://schema.org/Event/Job">
-      <div>
-        <strong>
-          <span itemprop="name">Software Engineer</span>
-          at
-          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="name">LeadMethod</span>
-          </span>
-        </strong>
+
+    
+    <div class="job" itemscope itemtype="http://schema.org/Event/Job">
+      <h3 itemprop="name">Software Engineer</h3>
+      <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+    
+
+        <div itemprop="name">LeadMethod</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">Bend, OR</div>
+        </div>
       </div>
       <time>
         
@@ -207,15 +213,17 @@
       
     </div>
     
-    <div itemscope itemtype="http://schema.org/Event/Job">
-      <div>
-        <strong>
-          <span itemprop="name">Web Developer</span>
-          at
-          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="name">Pro Q Solutions</span>
-          </span>
-        </strong>
+
+    
+    <div class="job" itemscope itemtype="http://schema.org/Event/Job">
+      <h3 itemprop="name">Web Developer</h3>
+      <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+    
+
+        <div itemprop="name">Pro Q Solutions</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">Bend, OR</div>
+        </div>
       </div>
       <time>
         
@@ -244,15 +252,17 @@
       
     </div>
     
-    <div itemscope itemtype="http://schema.org/Event/Job">
-      <div>
-        <strong>
-          <span itemprop="name">Software Developer</span>
-          at
-          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
-            <span itemprop="name">Code Monkeys</span>
-          </span>
-        </strong>
+
+    
+    <div class="job" itemscope itemtype="http://schema.org/Event/Job">
+      <h3 itemprop="name">Software Developer</h3>
+      <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+    
+
+        <div itemprop="name">Code Monkeys</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">Newberg, OR</div>
+        </div>
       </div>
       <time>
         
@@ -283,7 +293,7 @@
     
   </section>
 
-  <section>
+  <section class="section-education">
     <h2>Education</h2>
 
     
@@ -346,7 +356,7 @@
   
 
   
-  <section>
+  <section class="section-references">
     <h2>References</h2>
 
     References available upon request.
