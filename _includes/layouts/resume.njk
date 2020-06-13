@@ -20,7 +20,11 @@ templateClass: tmpl-resume
 
     {% if phone %}<div itemprop="telephone">{{ phone }}</div>{% endif %}
     {% if email %}
-    <div><a href="mailto:{{ email }}" itemprop="email">{{ email }}</a></div>
+    <div>
+      <a href="mailto:{{ email }}">
+        <span itemprop="email">{{ email }}</span>
+      </a>
+    </div>
     {% endif %}
 
     {% if website %}
