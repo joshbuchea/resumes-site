@@ -3,8 +3,10 @@ layout: base
 templateClass: tmpl-resume
 ---
 
+<div itemscope itemtype="http://schema.org/Person">
+
 <header>
-  <h1>{{ name }}</h1>
+  <h1 itemprop="name">{{ name }}</h1>
   <p>{{ title }}</p>
 </header>
 
@@ -12,35 +14,37 @@ templateClass: tmpl-resume
   <section>
     <h2 class="hidden">Details</h2>
 
-    {% if location %}<address>{{ location }}</address>{% endif %}
+    {% if location %}
+    <address itemprop="address">{{ location }}</address>
+    {% endif %}
 
-    {% if phone %}<div>{{ phone }}</div>{% endif %}
+    {% if phone %}<div itemprop="telephone">{{ phone }}</div>{% endif %}
     {% if email %}
-    <div><a href="mailto:{{ email }}">{{ email }}</a></div>
+    <div><a href="mailto:{{ email }}" itemprop="email">{{ email }}</a></div>
     {% endif %}
 
     {% if website %}
-    <div><a href="{{ website }}">{{ website }}</a></div>
+    <div><a href="{{ website }}" itemprop="url">{{ website }}</a></div>
     {% endif %}
 
     {# social #}
     {% if social.twitter %}
     <div>
-      <a href="https://twitter.com/{{ social.twitter }}">
+      <a href="https://twitter.com/{{ social.twitter }}" itemprop="sameAs">
         twitter.com/{{ social.twitter }}
       </a>
     </div>
     {% endif %}
     {% if social.github %}
     <div>
-      <a href="https://github.com/{{ social.github }}">
+      <a href="https://github.com/{{ social.github }}" itemprop="sameAs">
         github.com/{{ social.github }}
       </a>
     </div>
     {% endif %}
     {% if social.linkedin %}
     <div>
-      <a href="https://www.linkedin.com/in/{{ social.linkedin }}/">
+      <a href="https://www.linkedin.com/in/{{ social.linkedin }}/" itemprop="sameAs">
         linkedin.com/in/{{ social.linkedin }}
       </a>
     </div>
@@ -51,7 +55,9 @@ templateClass: tmpl-resume
   <section>
     <h2>Profile</h2>
 
+    <div itemprop="description">
     {{ profile }}
+    </div>
   </section>
   {% endif %}
 
@@ -137,3 +143,5 @@ templateClass: tmpl-resume
 </main>
 
 {# {{ content | safe }} #}
+
+</div>
