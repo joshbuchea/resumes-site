@@ -64,7 +64,7 @@ templateClass: tmpl-resume
   <section class="skills">
     <h2>Skills</h2>
 
-    <ul>
+    <ul itemprop="knowsAbout">
       {% for skill in skills %}
       <li>{{ skill }}</li>
       {% endfor %}
@@ -75,7 +75,7 @@ templateClass: tmpl-resume
     <h2>Experience</h2>
 
     {% for _experience in experience %}
-    <div itemprop="" itemscope itemtype="http://schema.org/Organization">
+    <div itemprop="alumniOf" itemscope itemtype="http://schema.org/Organization">
       <div>
         <strong>
           {{ _experience.title }} at
