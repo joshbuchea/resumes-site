@@ -7,7 +7,7 @@ templateClass: tmpl-resume
 
 <header>
   <h1 itemprop="name">{{ name }}</h1>
-  <p>{{ title }}</p>
+  <p itemprop="jobTitle">{{ title }}</p>
 </header>
 
 <main>
@@ -56,7 +56,7 @@ templateClass: tmpl-resume
     <h2>Profile</h2>
 
     <div itemprop="description">
-    {{ profile }}
+      {{ profile }}
     </div>
   </section>
   {% endif %}
@@ -65,11 +65,9 @@ templateClass: tmpl-resume
     <h2>Skills</h2>
 
     <ul>
-    {% for skill in skills %}
-      <li>
-        {{ skill }}
-      </li>
-    {% endfor %}
+      {% for skill in skills %}
+      <li>{{ skill }}</li>
+      {% endfor %}
     </ul>
   </section>
 
@@ -79,7 +77,10 @@ templateClass: tmpl-resume
     {% for _experience in experience %}
     <div>
       <div>
-        <strong>{{ _experience.title }} at {{ _experience.company }}</strong>
+        <strong itemprop="???" itemscope itemtype="http://schema.org/Organization">
+          {{ _experience.title }} at
+          <span itemprop="name">{{ _experience.company }}</span>
+        </strong>
       </div>
       <div>
         <time>
@@ -91,11 +92,9 @@ templateClass: tmpl-resume
 
       {% if _experience.achievements %}
       <ul>
-      {% for achievement in _experience.achievements %}
-        <li>
-          {{ achievement }}
-        </li>
-      {% endfor %}
+        {% for achievement in _experience.achievements %}
+        <li>{{ achievement }}</li>
+        {% endfor %}
       </ul>
       {% endif %}
     </div>
@@ -108,7 +107,10 @@ templateClass: tmpl-resume
     {% for _education in education %}
     <div>
       <div>
-        <strong>{{ _education.degree }} at {{ _education.school }}</strong>
+        <strong itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+          {{ _education.degree }} at
+          <span itemprop="name">{{ _education.school }}</span>
+        </strong>
       </div>
       <div>
         <time>
@@ -120,11 +122,9 @@ templateClass: tmpl-resume
 
       {% if _education.achievements %}
       <ul>
-      {% for achievement in _education.achievements %}
-        <li>
-          {{ achievement }}
-        </li>
-      {% endfor %}
+        {% for achievement in _education.achievements %}
+        <li>{{ achievement }}</li>
+        {% endfor %}
       </ul>
       {% endif %}
     </div>
