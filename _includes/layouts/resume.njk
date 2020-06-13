@@ -83,7 +83,7 @@ templateClass: tmpl-resume
     {% if _experience.current %}
     <div class="job">
       <h3 itemprop="jobTitle">{{ _experience.title }}</h3>
-      <div itemprop="location" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+      <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
     {% else %}
     <div class="job" itemscope itemtype="http://schema.org/Event/Job">
       <h3 itemprop="name">{{ _experience.title }}</h3>
@@ -96,17 +96,21 @@ templateClass: tmpl-resume
         </div>
       </div>
       <time>
-        {% if _experience.start_date %}
+        {% if _experience.start_date and _experience.current != true %}
         <span itemprop="startDate" content="{{ _experience.start_date }}">
+        {% else %}
+        <span>
+        {% endif %}
           {{ _experience.start_date }}
         </span>
-        {% endif %}
         {% if _experience.start_date and _experience.end_date %}–{% endif %}
-        {% if _experience.end_date %}
+        {% if _experience.end_date and _experience.current != true %}
         <span itemprop="endDate" content="{{ _experience.end_date }}">
+        {% else %}
+        <span>
+        {% endif %}
           {{ _experience.end_date }}
         </span>
-        {% endif %}
       </time>
 
       {% if _experience.achievements %}
