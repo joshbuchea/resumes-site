@@ -82,13 +82,11 @@ templateClass: tmpl-resume
           <span itemprop="name">{{ _experience.company }}</span>
         </strong>
       </div>
-      <div>
-        <time>
-          {{ _experience.start_date }}
-          {% if _experience.start_date and _experience.end_date %}–{% endif %}
-          {{ _experience.end_date }}
-        </time>
-      </div>
+      <time>
+        {{ _experience.start_date }}
+        {% if _experience.start_date and _experience.end_date %}–{% endif %}
+        {{ _experience.end_date }}
+      </time>
 
       {% if _experience.achievements %}
       <ul>
@@ -112,13 +110,11 @@ templateClass: tmpl-resume
           <span itemprop="name">{{ _education.school }}</span>
         </strong>
       </div>
-      <div>
-        <time>
-          {{ _education.start_date }}
-          {% if _education.start_date and _education.end_date %}–{% endif %}
-          {{ _education.end_date }}
-        </time>
-      </div>
+      <time>
+        {{ _education.start_date }}
+        {% if _education.start_date and _education.end_date %}–{% endif %}
+        {{ _education.end_date }}
+      </time>
 
       {% if _education.achievements %}
       <ul>
