@@ -1,4 +1,14 @@
-# eleventy-base-blog
+# Semantic Resume
+
+## Features
+
+- [ ] Accessible (Colors, Fonts, Speed)
+- [x] Fast (load in under 1 sec, as few requests as possible)
+- [ ] Forkable (github actions config)
+- [ ] Printable (print styles?)
+- [ ] Schema.org markup (https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fjoshbuchea.github.io%2Fresume%2F)
+
+---
 
 A starter repository showing how to build a blog with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
 
