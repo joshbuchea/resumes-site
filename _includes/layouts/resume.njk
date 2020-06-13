@@ -92,9 +92,9 @@ templateClass: tmpl-resume
       <time>
         {% if _experience.start_date %}
         <span itemprop="startDate" content="{{ _experience.start_date }}">
-        {% endif %}
           {{ _experience.start_date }}
         </span>
+        {% endif %}
         {% if _experience.start_date and _experience.end_date %}–{% endif %}
         {% if _experience.end_date %}
         <span itemprop="endDate" content="{{ _experience.end_date }}">
