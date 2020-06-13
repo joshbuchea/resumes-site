@@ -14,8 +14,10 @@
   </head>
   <body>
     
+<div itemscope itemtype="http://schema.org/Person">
+
 <header>
-  <h1>Josh Buchea</h1>
+  <h1 itemprop="name">Josh Buchea</h1>
   <p>Software Engineer</p>
 </header>
 
@@ -23,35 +25,37 @@
   <section>
     <h2 class="hidden">Details</h2>
 
-    <address>McMinnville, OR</address>
-
     
-    
-    <div><a href="mailto:hi@joshbuchea.com">hi@joshbuchea.com</a></div>
+    <address itemprop="address">McMinnville, OR</address>
     
 
     
-    <div><a href="joshbuchea.com">joshbuchea.com</a></div>
+    
+    <div><a href="mailto:hi@joshbuchea.com" itemprop="email">hi@joshbuchea.com</a></div>
+    
+
+    
+    <div><a href="joshbuchea.com" itemprop="url">joshbuchea.com</a></div>
     
 
     
     
     <div>
-      <a href="https://twitter.com/joshbuchea">
+      <a href="https://twitter.com/joshbuchea" itemprop="sameAs">
         twitter.com/joshbuchea
       </a>
     </div>
     
     
     <div>
-      <a href="https://github.com/joshbuchea">
+      <a href="https://github.com/joshbuchea" itemprop="sameAs">
         github.com/joshbuchea
       </a>
     </div>
     
     
     <div>
-      <a href="https://www.linkedin.com/in/joshbuchea/">
+      <a href="https://www.linkedin.com/in/joshbuchea/" itemprop="sameAs">
         linkedin.com/in/joshbuchea
       </a>
     </div>
@@ -341,6 +345,8 @@
 </main>
 
 
+
+</div>
 
   </body>
 </html>
