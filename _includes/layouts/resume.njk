@@ -28,27 +28,27 @@ templateClass: tmpl-resume
     {% endif %}
 
     {% if website %}
-    <div><a href="{{ website }}" itemprop="url">{{ website }}</a></div>
+    <div><a itemprop="url" href="{{ website }}">{{ website }}</a></div>
     {% endif %}
 
     {# social #}
     {% if social.twitter %}
     <div>
-      <a href="https://twitter.com/{{ social.twitter }}" itemprop="sameAs">
+      <a itemprop="sameAs" rel="me" href="https://twitter.com/{{ social.twitter }}">
         twitter.com/{{ social.twitter }}
       </a>
     </div>
     {% endif %}
     {% if social.github %}
     <div>
-      <a href="https://github.com/{{ social.github }}" itemprop="sameAs">
+      <a itemprop="sameAs" rel="me" href="https://github.com/{{ social.github }}">
         github.com/{{ social.github }}
       </a>
     </div>
     {% endif %}
     {% if social.linkedin %}
     <div>
-      <a href="https://www.linkedin.com/in/{{ social.linkedin }}/" itemprop="sameAs">
+      <a itemprop="sameAs" rel="me" href="https://www.linkedin.com/in/{{ social.linkedin }}/">
         linkedin.com/in/{{ social.linkedin }}
       </a>
     </div>
@@ -59,9 +59,9 @@ templateClass: tmpl-resume
   <section>
     <h2>Profile</h2>
 
-    <div itemprop="description">
+    <p itemprop="description">
       {{ profile }}
-    </div>
+    </p>
   </section>
   {% endif %}
 
@@ -79,17 +79,28 @@ templateClass: tmpl-resume
     <h2>Experience</h2>
 
     {% for _experience in experience %}
-    <div itemprop="alumniOf" itemscope itemtype="http://schema.org/Organization">
+    <div itemscope itemtype="http://schema.org/Event/Job">
       <div>
         <strong>
-          {{ _experience.title }} at
-          <span itemprop="name">{{ _experience.company }}</span>
+          <span itemprop="name">{{ _experience.title }}</span>
+          at
+          <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="name">{{ _experience.organization }}</span>
+          </span>
         </strong>
       </div>
       <time>
-        {{ _experience.start_date }}
+        {% if _experience.start_date %}
+        <span itemprop="startDate" content="{{ _experience.start_date }}">
+        {% endif %}
+          {{ _experience.start_date }}
+        </span>
         {% if _experience.start_date and _experience.end_date %}–{% endif %}
-        {{ _experience.end_date }}
+        {% if _experience.end_date %}
+        <span itemprop="endDate" content="{{ _experience.end_date }}">
+          {{ _experience.end_date }}
+        </span>
+        {% endif %}
       </time>
 
       {% if _experience.achievements %}
@@ -110,7 +121,8 @@ templateClass: tmpl-resume
     <div itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
       <div>
         <strong>
-          {{ _education.degree }} at
+          <span itemprop="description">{{ _education.degree }}</span>
+          at
           <span itemprop="name">{{ _education.school }}</span>
         </strong>
       </div>

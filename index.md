@@ -22,7 +22,7 @@ skills:
   - Git
 experience:
   - title: Senior Frontend Engineer
-    company: Axios
+    organization: Axios
     location: Remote
     start_date: 2020
     end_date: Present
@@ -31,7 +31,7 @@ experience:
       - Measured achievement
       - Measured achievement
   - title: Software Engineer
-    company: Echobind
+    organization: Echobind
     location: Remote
     start_date: 2019
     end_date: 2020
@@ -39,7 +39,7 @@ experience:
       - Mobile Engineering with TypeScript, JavaScript, React Native, React, GraphQL, Apollo
       - Augmented team at a large media startup & helped ship their first mobile application
   - title: Software Engineer
-    company: LeadMethod
+    organization: LeadMethod
     location: Bend, OR
     start_date: 2017
     end_date: 2018
@@ -48,7 +48,7 @@ experience:
       - Led integration of React in SaaS Web App used by more than 20k users worldwide
       - Reduced app render time for large orgs by 400% by integrating React Virtualized
   - title: Web Developer
-    company: Pro Q Solutions
+    organization: Pro Q Solutions
     location: Bend, OR
     start_date: 2016
     end_date: 2017
@@ -57,7 +57,7 @@ experience:
       - Executed product changes to successfully secure 2 funding rounds for SaaS startup
       - Automated business tasks for small startup, freeing up one full-time employee
   - title: Software Developer
-    company: Code Monkeys
+    organization: Code Monkeys
     location: Newberg, OR
     start_date: 2014
     end_date: 2016
