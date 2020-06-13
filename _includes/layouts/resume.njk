@@ -75,9 +75,9 @@ templateClass: tmpl-resume
     <h2>Experience</h2>
 
     {% for _experience in experience %}
-    <div>
+    <div itemprop="???" itemscope itemtype="http://schema.org/Organization">
       <div>
-        <strong itemprop="???" itemscope itemtype="http://schema.org/Organization">
+        <strong>
           {{ _experience.title }} at
           <span itemprop="name">{{ _experience.company }}</span>
         </strong>
@@ -103,9 +103,9 @@ templateClass: tmpl-resume
     <h2>Education</h2>
 
     {% for _education in education %}
-    <div>
+    <div itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
       <div>
-        <strong itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+        <strong>
           {{ _education.degree }} at
           <span itemprop="name">{{ _education.school }}</span>
         </strong>
