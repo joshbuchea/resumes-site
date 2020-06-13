@@ -127,17 +127,9 @@ templateClass: tmpl-resume
         </strong>
       </div>
       <time>
-        {% if _education.start_date %}
-        <span itemprop="startDate" content="{{ _education.start_date }}">
-          {{ _education.start_date }}
-        </span>
-        {% endif %}
+        {{ _education.start_date }}
         {% if _education.start_date and _education.end_date %}–{% endif %}
-        {% if _education.end_date %}
-        <span itemprop="endDate" content="{{ _education.end_date }}">
-          {{ _education.end_date }}
-        </span>
-        {% endif %}
+        {{ _education.end_date }}
       </time>
 
       {% if _education.achievements %}
