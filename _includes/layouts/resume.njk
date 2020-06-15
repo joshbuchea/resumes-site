@@ -79,17 +79,18 @@ templateClass: tmpl-resume
     <h2>Experience</h2>
 
     {% for _experience in experience %}
-
     {% if _experience.current %}
+    {# job header (current job) #}
     <div class="job">
       <h3 itemprop="jobTitle">{{ _experience.title }}</h3>
       <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
     {% else %}
+    {# job header (past job) #}
     <div class="job" itemscope itemtype="http://schema.org/Event/Job">
       <h3 itemprop="name">{{ _experience.title }}</h3>
       <div itemprop="location" itemscope itemtype="http://schema.org/Place">
-    {% endif %}
-
+      {% endif %}
+        {# job body #}
         <div itemprop="name">{{ _experience.organization }}</div>
         <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
           <div itemprop="addressLocality">{{ _experience.location }}</div>
