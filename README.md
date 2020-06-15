@@ -5,8 +5,10 @@
 - [ ] Accessible (Colors, Fonts, Speed)
 - [x] Fast (load in under 1 sec, as few requests as possible)
 - [ ] Forkable (github actions config)
+- [ ] Opens all external links in a new tab
 - [ ] Printable (print styles?)
 - [ ] Schema.org markup (https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fjoshbuchea.github.io%2Fresume%2F)
+- [ ] SEO/Social meta tags
 
 ---
 
