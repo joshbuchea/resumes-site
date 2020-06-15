@@ -129,14 +129,18 @@ templateClass: tmpl-resume
     <h2>Education</h2>
 
     {% for _education in education %}
-    <div itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
-      <div>
-        <strong>
-          <span itemprop="description">{{ _education.degree }}</span>
-          at
-          <span itemprop="name">{{ _education.school }}</span>
-        </strong>
-      </div>
+    <div class="certificate" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+      <h3 itemprop="description">
+        {% if _education.degree_type_short and _education.degree_type_long %}
+        <abbr title="{{ _education.degree_type_long }}">
+          {{ _education.degree_type_short }}
+        </abbr>
+        in
+        {% endif %}
+        {{ _education.degree }}
+      </h3>
+      <div itemprop="name">{{ _education.school }}</div>
+      <div itemprop="location">{{ _education.location }}</div>
       <time>
         {{ _education.start_date }}
         {% if _education.start_date and _education.end_date %}–{% endif %}

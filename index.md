@@ -1,7 +1,7 @@
 ---
 name: Josh Buchea
 headline: Software Engineer
-location: McMinnville, OR
+location: McMinnville, Oregon
 website: joshbuchea.com
 email: hi@joshbuchea.com
 # phone: 555-555-1234
@@ -41,7 +41,7 @@ experience:
       - Augmented team at a large media startup & helped ship their first mobile application
   - title: Software Engineer
     organization: LeadMethod
-    location: Bend, OR
+    location: Bend, Oregon
     start_date: 2017
     end_date: 2018
     achievements:
@@ -50,7 +50,7 @@ experience:
       - Reduced app render time for large orgs by 400% by integrating React Virtualized
   - title: Web Developer
     organization: Pro Q Solutions
-    location: Bend, OR
+    location: Bend, Oregon
     start_date: 2016
     end_date: 2017
     achievements:
@@ -59,7 +59,7 @@ experience:
       - Automated business tasks for small startup, freeing up one full-time employee
   - title: Software Developer
     organization: Code Monkeys
-    location: Newberg, OR
+    location: Newberg, Oregon
     start_date: 2014
     end_date: 2016
     achievements:
@@ -69,7 +69,9 @@ experience:
 education:
   - school: Portland Community College
     degree: Computer Information Systems
-    location: Portland, OR
+    degree_type_short: AAS
+    degree_type_long: Associate of Applied Science
+    location: Portland, Oregon
     start_date:
     end_date: 2014
     achievements:
@@ -78,7 +80,9 @@ education:
       - Measured achievement
   - school: Portland Community College
     degree: Website Development and Design
-    location: Portland, OR
+    degree_type_short: AAS
+    degree_type_long: Associate of Applied Science
+    location: Portland, Oregon
     start_date:
     end_date: 2013
     achievements:
