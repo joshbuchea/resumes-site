@@ -3,8 +3,10 @@ layout: base
 templateClass: tmpl-resume
 ---
 
+<div itemscope itemtype="http://schema.org/Person">
+
 <header>
-  <h1>{{ name }}</h1>
+  <h1 itemprop="name">{{ name }}</h1>
   <p>{{ headline }}</p>
 </header>
 
@@ -13,38 +15,40 @@ templateClass: tmpl-resume
     <h2 class="hidden">Details</h2>
 
     {% if location %}
-    <address>{{ location }}</address>
+    <address itemprop="address">{{ location }}</address>
     {% endif %}
 
-    {% if phone %}<div>{{ phone }}</div>{% endif %}
+    {% if phone %}<div itemprop="telephone">{{ phone }}</div>{% endif %}
     {% if email %}
     <div>
-      <a href="mailto:{{ email }}">{{ email }}</a>
+      <a href="mailto:{{ email }}">
+        <span itemprop="email">{{ email }}</span>
+      </a>
     </div>
     {% endif %}
 
     {% if website %}
-    <div><a href="{{ website }}">{{ website }}</a></div>
+    <div><a itemprop="url" href="{{ website }}">{{ website }}</a></div>
     {% endif %}
 
     {# social #}
     {% if social.twitter %}
     <div>
-      <a rel="me" href="https://twitter.com/{{ social.twitter }}">
+      <a itemprop="sameAs" rel="me" href="https://twitter.com/{{ social.twitter }}">
         twitter.com/{{ social.twitter }}
       </a>
     </div>
     {% endif %}
     {% if social.github %}
     <div>
-      <a rel="me" href="https://github.com/{{ social.github }}">
+      <a itemprop="sameAs" rel="me" href="https://github.com/{{ social.github }}">
         github.com/{{ social.github }}
       </a>
     </div>
     {% endif %}
     {% if social.linkedin %}
     <div>
-      <a rel="me" href="https://www.linkedin.com/in/{{ social.linkedin }}/">
+      <a itemprop="sameAs" rel="me" href="https://www.linkedin.com/in/{{ social.linkedin }}/">
         linkedin.com/in/{{ social.linkedin }}
       </a>
     </div>
@@ -55,7 +59,7 @@ templateClass: tmpl-resume
   <section class="section-profile">
     <h2>Profile</h2>
 
-    <p>
+    <p itemprop="description">
       {{ profile }}
     </p>
   </section>
@@ -64,7 +68,7 @@ templateClass: tmpl-resume
   <section class="section-skills">
     <h2>Skills</h2>
 
-    <ul>
+    <ul itemprop="knowsAbout">
       {% for skill in skills %}
       <li>{{ skill }}</li>
       {% endfor %}
@@ -75,14 +79,39 @@ templateClass: tmpl-resume
     <h2>Experience</h2>
 
     {% for _experience in experience %}
+    {% if _experience.current %}
+    {# job header (current job) #}
     <div class="job">
-      <h3>{{ _experience.title }}</h3>
-      <div>{{ _experience.organization }}</div>
-      {# <div>{{ _experience.location }}</div> #}
+      <h3 itemprop="jobTitle">{{ _experience.title }}</h3>
+      <div itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+    {% else %}
+    {# job header (past job) #}
+    <div class="job" itemscope itemtype="http://schema.org/Event/Job">
+      <h3 itemprop="name">{{ _experience.title }}</h3>
+      <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+      {% endif %}
+        {# job body #}
+        <div itemprop="name">{{ _experience.organization }}</div>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <div itemprop="addressLocality">{{ _experience.location }}</div>
+        </div>
+      </div>
       <time>
-        <span>{{ _experience.start_date }}</span>
+        {% if _experience.start_date and _experience.current != true %}
+        <span itemprop="startDate" content="{{ _experience.start_date }}">
+        {% else %}
+        <span>
+        {% endif %}
+          {{ _experience.start_date }}
+        </span>
         {% if _experience.start_date and _experience.end_date %}–{% endif %}
-        <span>{{ _experience.end_date }}</span>
+        {% if _experience.end_date and _experience.current != true %}
+        <span itemprop="endDate" content="{{ _experience.end_date }}">
+        {% else %}
+        <span>
+        {% endif %}
+          {{ _experience.end_date }}
+        </span>
       </time>
 
       {% if _experience.achievements %}
@@ -100,17 +129,18 @@ templateClass: tmpl-resume
     <h2>Education</h2>
 
     {% for _education in education %}
-    <div class="certificate">
-      <h3>
+    <div class="certificate" itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+      <h3 itemprop="description">
         {% if _education.degree_type_short and _education.degree_type_long %}
         <abbr title="{{ _education.degree_type_long }}">
           {{ _education.degree_type_short }}
-        </abbr>:
+        </abbr>
+        in
         {% endif %}
         {{ _education.degree }}
       </h3>
-      <div>{{ _education.school }}</div>
-      {# <div>{{ _education.location }}</div> #}
+      <div itemprop="name">{{ _education.school }}</div>
+      <div itemprop="location">{{ _education.location }}</div>
       <time>
         {{ _education.start_date }}
         {% if _education.start_date and _education.end_date %}–{% endif %}
@@ -134,9 +164,11 @@ templateClass: tmpl-resume
   <section class="section-references">
     <h2>References</h2>
 
-    <p>{{ references }}</p>
+    {{ references }}
   </section>
   {% endif %}
 </main>
 
 {# {{ content | safe }} #}
+
+</div>
