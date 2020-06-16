@@ -22,8 +22,8 @@ skills:
   - Git
 experience:
   - title: Senior Frontend Engineer
-    organization: Axios
-    location: Remote
+    organization: Axios Media
+    location: Arlington, Virginia
     current: true
     start_date: 2020
     end_date: Present
@@ -33,7 +33,7 @@ experience:
       - Measured achievement
   - title: Software Engineer
     organization: Echobind
-    location: Remote
+    location: Boston, Massachusetts
     start_date: 2019
     end_date: 2020
     achievements:
